@@ -10,7 +10,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
-  scroll-behavior: smooth; /* efecto suave al hacer click en navbar */
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -132,7 +132,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .hero .overlay {
     padding: 1.2rem;
     border-radius: 6px;
@@ -145,7 +145,7 @@ body {
     font-size: 1rem;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .hero h1 {
     font-size: 1.5rem;
   }
@@ -186,16 +186,12 @@ footer::before {
   background: linear-gradient(90deg, #f0c040, #e1306c, #25d366);
 }
 footer .footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columnas en desktop */
   gap: 2rem;
   max-width: 1200px;
   margin: auto;
-}
-footer .footer-col {
-  flex: 1;
-  min-width: 220px;
 }
 footer .footer-col h3.brand {
   font-family: "Playfair Display", serif;
@@ -213,10 +209,10 @@ footer .footer-col p {
   color: #ccc;
 }
 footer .footer-col {
-  /* 🔹 Enlaces */
+  /* Enlaces */
 }
 footer .footer-col ul {
-  list-style: none; /* quita viñetas */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -232,20 +228,20 @@ footer .footer-col ul li a:hover {
   color: #f0c040;
 }
 footer .footer-col ul li a:visited {
-  color: #ccc; /* evita morado */
+  color: #ccc;
 }
 footer .footer-col {
-  /* 🔹 Social media */
+  /* Social media */
 }
 footer .footer-col .social-links {
   display: flex;
-  justify-content: flex-start; /* alineados a la izquierda */
+  justify-content: flex-start;
   gap: 1rem;
   margin-top: 1rem;
 }
 footer .footer-col .social-links .social-icon img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   filter: grayscale(100%);
   transition: all 0.3s ease;
 }
@@ -259,6 +255,26 @@ footer .footer-col .social-links .social-icon.whatsapp:hover img {
 footer .footer-col .social-links .social-icon.instagram:hover img {
   filter: grayscale(0%) drop-shadow(0 0 6px #e1306c);
 }
+footer .footer-col {
+  /* Mapa */
+}
+footer .footer-col .map-embed {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  margin-top: 1rem;
+}
+footer .footer-col .map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 footer .footer-bottom {
   text-align: center;
   margin-top: 2rem;
@@ -270,14 +286,27 @@ footer .footer-bottom p {
   color: #aaa;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* 🔹 Responsive queries */
+@media (max-width: 992px) {
   footer .footer-container {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas en tablets */
+  }
+}
+@media (max-width: 600px) {
+  footer .footer-container {
+    grid-template-columns: 1fr;
+    /* 1 columna en móviles */
     text-align: center;
   }
   footer .footer-col .social-links {
-    justify-content: center; /* en móvil vuelven al centro */
+    justify-content: center;
+  }
+  footer .footer-col .map-embed {
+    max-width: 100%;
+    aspect-ratio: 4/3;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 /* Contacto */
@@ -356,6 +385,173 @@ footer .footer-bottom p {
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.card-container.familia {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+@media (max-width: 440px) {
+  .hero .overlay {
+    max-width: 100%;
+    padding: 0.8rem;
+    border-radius: 4px;
+  }
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
+}
+.hero .overlay {
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 992px) {
+  .card-container.familia {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+@media (max-width: 600px) {
+  .card-container.familia {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+}
+/* ===== Estilo general ===== */
+body {
+  background: #fff; /* fondo blanco */
+  color: #222;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Header ===== */
+.page-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f7f7f7; /* gris suave */
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ===== Contenido principal ===== */
+.depto-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Galería en grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Descripción */
+.description {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: #f7f7f7; /* gris suave */
+  border-radius: 8px;
+}
+
+.description h2 {
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ===== Footer ===== */
+.page-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem; /* espacio para que no quede pegado abajo */
+  background: #f7f7f7;
+}
+
+.back-link {
+  color: #f0c040; /* dorado */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Footer exclusivo para páginas de deptos */
+.depto-footer {
+  background: #000; /* negro */
+  color: #fff; /* texto blanco */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.depto-footer .back-link {
+  color: #f0c040; /* dorado */
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+
+.depto-footer .back-link:hover {
+  text-decoration: underline;
+}
+
+.depto-footer p {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=style.css.map */

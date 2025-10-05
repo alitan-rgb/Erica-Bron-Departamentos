@@ -1,0 +1,28 @@
+@media (max-width: 440px) {
+    .hero .overlay {
+        max-width: 100%;
+        padding: 0.8rem;
+        border-radius: 4px;
+    }
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+    .hero p {
+        font-size: 0.85rem;
+    }
+}
+.hero .overlay {
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+@media (max-width: 992px) {
+  .card-container.familia {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container.familia {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+}
