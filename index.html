@@ -1,135 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erica Bron - Departamentos</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <!-- Navbar -->
-<nav class="navbar">
-  <div class="logo">
-    <span class="brand">Erica Bron</span>
-  </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Erica Bron - Departamentos</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <span class="brand">Erica Bron</span>
+            </div>
 
-  <!-- Botón hamburguesa -->
-  <div class="hamburger" id="hamburger">☰</div>
+            <!-- Botón hamburguesa -->
+            <div class="hamburger" id="hamburger">☰</div>
 
-  <!-- Links -->
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#familia">4-5 Personas</a></li>
-    <li><a href="#economicos">Económicos</a></li>
-    <li><a href="#premium">Premium</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
+            <!-- Links -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#familia">4-5 Personas</a></li>
+                <li><a href="#economicos">Económicos</a></li>
+                <li><a href="#premium">Premium</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  const links = navLinks.querySelectorAll('a');
+        <script>
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+            const links = navLinks.querySelectorAll("a");
 
-  // abrir/cerrar menú
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+            // abrir/cerrar menú
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
 
-  // cerrar menú al hacer clic en un enlace
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-</script>
+            // cerrar menú al hacer clic en un enlace
+            links.forEach((link) => {
+                link.addEventListener("click", () => {
+                    navLinks.classList.remove("active");
+                });
+            });
+        </script>
 
+        <!-- Hero -->
+        <header id="inicio" class="hero">
+            <div class="overlay">
+                <h1>Departamentos en La Costa</h1>
+                <p>Encuentra tu sitio para este verano</p>
+            </div>
+        </header>
 
+        <!-- Sección 4-5 personas -->
+        <section id="familia" class="section">
+            <h2>Departamentos para 4-5 Personas</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img
+                        src="images/depto-familia1.jpg"
+                        alt="Depto Familiar 1" />
+                    <h3>Depto Familiar A</h3>
+                    <p>Amplio, moderno y con balcón al mar.</p>
+                </div>
+                <div class="card">
+                    <img
+                        src="images/depto-familia2.jpg"
+                        alt="Depto Familiar 2" />
+                    <h3>Depto Familiar B</h3>
+                    <p>3 habitaciones, cocina equipada y living luminoso.</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- Sección Económicos -->
+        <section id="economicos" class="section alt">
+            <h2>Departamentos Económicos</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img
+                        src="images/depto-economico1.jpg"
+                        alt="Depto Económico 1" />
+                    <h3>Depto Económico A</h3>
+                    <p>Funcional y accesible, ideal para estadías cortas.</p>
+                </div>
+                <div class="card">
+                    <img
+                        src="images/depto-economico2.jpg"
+                        alt="Depto Económico 2" />
+                    <h3>Depto Económico B</h3>
+                    <p>Compacto pero cómodo, cerca del centro.</p>
+                </div>
+            </div>
+        </section>
 
-  <!-- Hero -->
-  <header id="inicio" class="hero">
-    <div class="overlay">
-      <h1>Departamentos en La Costa</h1>
-      <p>Encuentra tu sitio para este verano</p>
-    </div>
-  </header>
+        <!-- Sección Premium -->
+        <section id="premium" class="section">
+            <h2>Departamentos Premium</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img
+                        src="images/depto-premium1.jpg"
+                        alt="Depto Premium 1" />
+                    <h3>Depto Premium A</h3>
+                    <p>Vista panorámica, jacuzzi y acabados de lujo.</p>
+                </div>
+                <div class="card">
+                    <img
+                        src="images/depto-premium2.jpg"
+                        alt="Depto Premium 2" />
+                    <h3>Depto Premium B</h3>
+                    <p>Diseño exclusivo, terraza privada y amenities.</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Sección 4-5 personas -->
-<section id="familia" class="section">
-  <h2>Departamentos para 4-5 Personas</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="images/depto-familia1.jpg" alt="Depto Familiar 1">
-      <h3>Depto Familiar A</h3>
-      <p>Amplio, moderno y con balcón al mar.</p>
-    </div>
-    <div class="card">
-      <img src="images/depto-familia2.jpg" alt="Depto Familiar 2">
-      <h3>Depto Familiar B</h3>
-      <p>3 habitaciones, cocina equipada y living luminoso.</p>
-    </div>
-  </div>
-</section>
+        <!-- Sección Contacto (independiente) -->
+        <section id="contacto" class="section alt">
+            <h2>Contacto</h2>
+            <p>
+                ¿Interesado en alguno de nuestros departamentos? Escríbenos y te
+                asesoraremos.
+            </p>
 
-<!-- Sección Económicos -->
-<section id="economicos" class="section alt">
-  <h2>Departamentos Económicos</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="images/depto-economico1.jpg" alt="Depto Económico 1">
-      <h3>Depto Económico A</h3>
-      <p>Funcional y accesible, ideal para estadías cortas.</p>
-    </div>
-    <div class="card">
-      <img src="images/depto-economico2.jpg" alt="Depto Económico 2">
-      <h3>Depto Económico B</h3>
-      <p>Compacto pero cómodo, cerca del centro.</p>
-    </div>
-  </div>
-</section>
+            <div class="contact-info">
+                <p><strong>Teléfono:</strong> 2257 612529</p>
 
-<!-- Sección Premium -->
-<section id="premium" class="section">
-  <h2>Departamentos Premium</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="images/depto-premium1.jpg" alt="Depto Premium 1">
-      <h3>Depto Premium A</h3>
-      <p>Vista panorámica, jacuzzi y acabados de lujo.</p>
-    </div>
-    <div class="card">
-      <img src="images/depto-premium2.jpg" alt="Depto Premium 2">
-      <h3>Depto Premium B</h3>
-      <p>Diseño exclusivo, terraza privada y amenities.</p>
-    </div>
-  </div>
-</section>
+                <div class="social-links">
+                    <a
+                        href="https://wa.me/2257612529"
+                        target="_blank"
+                        class="social-icon whatsapp">
+                        <img src="images/whatsapp-logo.jpg" alt="WhatsApp" />
+                    </a>
+                    <a
+                        href="https://instagram.com/ericabron"
+                        target="_blank"
+                        class="social-icon instagram">
+                        <img src="images/instagram-logo.jpg" alt="Instagram" />
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<!-- Sección Contacto (independiente) -->
-<section id="contacto" class="section alt">
-  <h2>Contacto</h2>
-  <p>¿Interesado en alguno de nuestros departamentos? Escríbenos y te asesoraremos.</p>
-  
-  <div class="contact-info">
-    <p><strong>Teléfono:</strong> 2257 612529</p>
-    
-    <div class="social-links">
-      <a href="https://wa.me/2257612529" target="_blank" class="social-icon whatsapp">
-        <img src="images/whatsapp-logo.jpg" alt="WhatsApp">
-      </a>
-      <a href="https://instagram.com/ericabron" target="_blank" class="social-icon instagram">
-        <img src="images/instagram-logo.jpg" alt="Instagram">
-      </a>
-    </div>
-  </div>
-</section>
+        <footer>
+            <div class="footer-container">
+                <!-- Columna 1 -->
+                <div class="footer-col">
+                    <h3 class="brand">Erica Bron</h3>
+                    <p>Departamentos en la costa con estilo y confort.</p>
+                </div>
 
+                <!-- Columna 2 -->
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#familia">4-5 Personas</a></li>
+                        <li><a href="#economicos">Económicos</a></li>
+                        <li><a href="#premium">Premium</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
 
+                <!-- Columna 3 -->
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <p>Tel: +54 2257 612529</p>
+                    <div class="social-links">
+                        <a
+                            href="https://wa.me/2257612529"
+                            target="_blank"
+                            class="social-icon whatsapp">
+                            <img src="images/whatsapp-logo.jpg" alt="WhatsApp" />
+                        </a>
+                        <a
+                            href="https://instagram.com/ericabron"
+                            target="_blank"
+                            class="social-icon instagram">
+                            <img src="images/instagram-logo.jpg" alt="Instagram" />
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Erica Bron. Todos los derechos reservados.</p>
-  </footer>
-</body>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Erica Bron. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
 </html>

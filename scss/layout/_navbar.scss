@@ -1,0 +1,103 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #141414;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+    .brand {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f0c040;
+        position: relative;
+        cursor: pointer;
+        transition: color 0.4s ease;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 3px;
+            background-color: #f0c040;
+            transition: width 0.4s ease;
+        }
+
+        &:hover {
+            color: #fff;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Links desktop */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #f0c040;
+        }
+    }
+}
+
+/* Botón hamburguesa */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        opacity: 0;
+        transform: translateY(-20px);
+        pointer-events: none;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+
+        &.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        a {
+            font-size: 1.5rem;
+        }
+    }
+}

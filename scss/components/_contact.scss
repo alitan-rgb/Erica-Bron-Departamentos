@@ -1,0 +1,40 @@
+/* Contacto */
+.contact-info {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+
+    p {
+        margin-bottom: 1rem;
+        color: #333;
+    }
+}
+
+/* Contenedor de iconos */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Iconos */
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.social-icon:hover img {
+    filter: grayscale(0%) drop-shadow(0 0 6px #f0c040);
+    transform: scale(1.1);
+}
+
+.social-icon.whatsapp:hover img {
+    filter: grayscale(0%) drop-shadow(0 0 6px #25d366);
+}
+
+.social-icon.instagram:hover img {
+    filter: grayscale(0%) drop-shadow(0 0 6px #e1306c);
+}

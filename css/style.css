@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Reset básico */
 * {
   margin: 0;
@@ -9,26 +10,22 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* efecto suave al hacer click en navbar */
 }
 
 /* Navbar */
-/* Navbar base */
-/* Navbar fija arriba */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #141414; /* sólido, sin transparencia */
+  background: #141414;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-
-/* Marca Erica Bron con animación */
 .navbar .brand {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
@@ -38,7 +35,6 @@ body {
   cursor: pointer;
   transition: color 0.4s ease;
 }
-
 .navbar .brand::after {
   content: "";
   position: absolute;
@@ -49,11 +45,9 @@ body {
   background-color: #f0c040;
   transition: width 0.4s ease;
 }
-
 .navbar .brand:hover {
   color: #fff;
 }
-
 .navbar .brand:hover::after {
   width: 100%;
 }
@@ -64,19 +58,17 @@ body {
   display: flex;
   gap: 1.5rem;
 }
-
 .nav-links a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
-
 .nav-links a:hover {
   color: #f0c040;
 }
 
-/* Botón hamburguesa (oculto en desktop) */
+/* Botón hamburguesa */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -84,165 +76,11 @@ body {
   cursor: pointer;
 }
 
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: rgba(20, 20, 20, 0.6);
-    backdrop-filter: blur(10px);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 0;
-  }
-
-  .nav-links a {
-    font-size: 1.5rem;
-  }
-}
-
-/* Hero con imagen original */
-.hero {
-  background: url("../images/playamuelle.jpg") no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding-top: 60px;
-}
-
-
-.hero .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  text-align: center;
-  padding: 2rem;
-  border-radius: 8px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* Ajustes responsive para el hero */
-@media (max-width: 768px) {
-  .hero .overlay {
-    padding: 1.2rem;
-    border-radius: 6px;
-    max-width: 90%; /* que no ocupe todo el ancho */
-  }
-
-  .hero h1 {
-    font-size: 1.8rem; /* más chico en móviles */
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Secciones */
-.section {
-  padding: 5rem 2rem;
-  text-align: center;
-  background-color: #f9f9f9;
-}
-
-.section.alt {
-  background-color: #fff;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Contacto */
-.contact-info {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-}
-
-.contact-info p {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* Contenedor de iconos */
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-/* Iconos */
-.social-icon img {
-  width: 40px;
-  height: 40px;
-  filter: grayscale(100%); /* estilo minimalista */
-  transition: all 0.3s ease;
-}
-
-/* Animación hover */
-.social-icon:hover img {
-  filter: grayscale(0%) drop-shadow(0 0 6px #f0c040);
-  transform: scale(1.1);
-}
-
-/* Colores específicos */
-.social-icon.whatsapp:hover img {
-  filter: grayscale(0%) drop-shadow(0 0 6px #25D366); /* verde WhatsApp */
-}
-
-.social-icon.instagram:hover img {
-  filter: grayscale(0%) drop-shadow(0 0 6px #E1306C); /* rosa Instagram */
-}
-
-/* --- Animación menú hamburguesa --- */
-@media (max-width: 768px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -260,19 +98,229 @@ footer {
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
-
   .nav-links.active {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
   }
-
   .nav-links a {
     font-size: 1.5rem;
   }
 }
+.hero {
+  background: url(../../images/playamuelle.jpg) no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 60px;
+}
+.hero .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.hero .overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero .overlay p {
+  font-size: 1.2rem;
+}
 
-/* --- Tarjetas de departamentos --- */
+/* Responsive */
+@media (max-width: 768px) {
+  .hero .overlay {
+    padding: 1.2rem;
+    border-radius: 6px;
+    max-width: 90%;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+/* Secciones */
+.section {
+  padding: 5rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+.section.alt {
+  background-color: #fff;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+footer {
+  background: #141414;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  margin-top: 3rem;
+  position: relative;
+  /* Separador superior */
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #f0c040, #e1306c, #25d366);
+}
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+footer .footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+footer .footer-col h3.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #f0c040;
+  margin-bottom: 0.5rem;
+}
+footer .footer-col h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #f0c040;
+}
+footer .footer-col p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+footer .footer-col {
+  /* 🔹 Enlaces */
+}
+footer .footer-col ul {
+  list-style: none; /* quita viñetas */
+  padding: 0;
+  margin: 0;
+}
+footer .footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+footer .footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer .footer-col ul li a:hover {
+  color: #f0c040;
+}
+footer .footer-col ul li a:visited {
+  color: #ccc; /* evita morado */
+}
+footer .footer-col {
+  /* 🔹 Social media */
+}
+footer .footer-col .social-links {
+  display: flex;
+  justify-content: flex-start; /* alineados a la izquierda */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+footer .footer-col .social-links .social-icon img {
+  width: 40px;
+  height: 40px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+footer .footer-col .social-links .social-icon:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #f0c040);
+  transform: scale(1.1);
+}
+footer .footer-col .social-links .social-icon.whatsapp:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #25d366);
+}
+footer .footer-col .social-links .social-icon.instagram:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #e1306c);
+}
+footer .footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+footer .footer-bottom p {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .footer-col .social-links {
+    justify-content: center; /* en móvil vuelven al centro */
+  }
+}
+/* Contacto */
+.contact-info {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+.contact-info p {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Contenedor de iconos */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Iconos */
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.social-icon:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #f0c040);
+  transform: scale(1.1);
+}
+
+.social-icon.whatsapp:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #25d366);
+}
+
+.social-icon.instagram:hover img {
+  filter: grayscale(0%) drop-shadow(0 0 6px #e1306c);
+}
+
+/* Tarjetas de departamentos */
 .card-container {
   display: flex;
   justify-content: center;
@@ -286,31 +334,28 @@ footer {
   border-radius: 10px;
   overflow: hidden;
   width: 280px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
-
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
-
 .card h3 {
   margin: 1rem;
   font-size: 1.2rem;
   color: #222;
 }
-
 .card p {
   margin: 0 1rem 1.5rem;
   color: #555;
   font-size: 0.95rem;
 }
-
-/* Hover animado */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
+
+/*# sourceMappingURL=style.css.map */
