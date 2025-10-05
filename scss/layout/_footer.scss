@@ -97,16 +97,15 @@ footer {
             }
         }
 
-        /* Mapa */
         .map-embed {
             position: relative;
             width: 100%;
-            max-width: 100%;
+            max-width: 600px; /* opcional, para no crecer demasiado en desktop */
             aspect-ratio: 16 / 9;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-            margin-top: 1rem;
+            margin: 1rem auto;
 
             iframe {
                 position: absolute;
@@ -128,32 +127,5 @@ footer {
             font-size: 0.85rem;
             color: #aaa;
         }
-    }
-}
-
-/* 🔹 Responsive queries */
-@media (max-width: 992px) {
-    footer .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 columnas en tablets */
-    }
-}
-
-@media (max-width: 600px) {
-    footer .footer-container {
-        grid-template-columns: 1fr;
-        /* 1 columna en móviles */
-        text-align: center;
-    }
-
-    footer .footer-col .social-links {
-        justify-content: center;
-    }
-
-    footer .footer-col .map-embed {
-        max-width: 100%;
-        aspect-ratio: 4 / 3;
-        margin-left: auto;
-        margin-right: auto;
     }
 }

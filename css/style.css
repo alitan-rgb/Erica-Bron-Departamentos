@@ -131,28 +131,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .hero .overlay {
-    padding: 1.2rem;
-    border-radius: 6px;
-    max-width: 90%;
-  }
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-}
 /* Secciones */
 .section {
   padding: 5rem 2rem;
@@ -255,18 +233,15 @@ footer .footer-col .social-links .social-icon.whatsapp:hover img {
 footer .footer-col .social-links .social-icon.instagram:hover img {
   filter: grayscale(0%) drop-shadow(0 0 6px #e1306c);
 }
-footer .footer-col {
-  /* Mapa */
-}
 footer .footer-col .map-embed {
   position: relative;
   width: 100%;
-  max-width: 100%;
+  max-width: 600px; /* opcional, para no crecer demasiado en desktop */
   aspect-ratio: 16/9;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-  margin-top: 1rem;
+  margin: 1rem auto;
 }
 footer .footer-col .map-embed iframe {
   position: absolute;
@@ -286,29 +261,6 @@ footer .footer-bottom p {
   color: #aaa;
 }
 
-/* 🔹 Responsive queries */
-@media (max-width: 992px) {
-  footer .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas en tablets */
-  }
-}
-@media (max-width: 600px) {
-  footer .footer-container {
-    grid-template-columns: 1fr;
-    /* 1 columna en móviles */
-    text-align: center;
-  }
-  footer .footer-col .social-links {
-    justify-content: center;
-  }
-  footer .footer-col .map-embed {
-    max-width: 100%;
-    aspect-ratio: 4/3;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 /* Contacto */
 .contact-info {
   margin-top: 2rem;
@@ -408,6 +360,57 @@ footer .footer-bottom p {
   display: block;
 }
 
+.hero .overlay {
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+/* 🔹 Breakpoint 992px (tablets) */
+@media (max-width: 992px) {
+  .card-container.familia {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+  footer .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+  .hero .overlay {
+    padding: 1.2rem;
+    border-radius: 6px;
+    max-width: 90%;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+/* 🔹 Breakpoint 600px (móviles) */
+@media (max-width: 600px) {
+  .card-container.familia {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+  footer .footer-container {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    text-align: center;
+  }
+  footer .footer-col .social-links {
+    justify-content: center;
+  }
+  footer .footer-col .map-embed {
+    width: 80%;
+    max-width: 350px;
+    aspect-ratio: 4/3;
+    margin: 1rem auto;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+/* 🔹 Breakpoint 440px (móviles muy chicos) */
 @media (max-width: 440px) {
   .hero .overlay {
     max-width: 100%;
@@ -419,21 +422,6 @@ footer .footer-bottom p {
   }
   .hero p {
     font-size: 0.85rem;
-  }
-}
-.hero .overlay {
-  box-sizing: border-box;
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 992px) {
-  .card-container.familia {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-}
-@media (max-width: 600px) {
-  .card-container.familia {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
   }
 }
 /* ===== Estilo general ===== */
@@ -474,7 +462,7 @@ body {
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 

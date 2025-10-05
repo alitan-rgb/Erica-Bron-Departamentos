@@ -1,28 +1,77 @@
+.hero .overlay {
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+/* 🔹 Breakpoint 992px (tablets) */
+@media (max-width: 992px) {
+    .card-container.familia {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+
+    footer .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+
+    .hero .overlay {
+        padding: 1.2rem;
+        border-radius: 6px;
+        max-width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* 🔹 Breakpoint 600px (móviles) */
+@media (max-width: 600px) {
+    .card-container.familia {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+
+    footer .footer-container {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+        text-align: center;
+    }
+
+    footer .footer-col .social-links {
+        justify-content: center;
+    }
+
+    footer .footer-col .map-embed {
+        width: 80%;
+        max-width: 350px;
+        aspect-ratio: 4 / 3;
+        margin: 1rem auto;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 🔹 Breakpoint 440px (móviles muy chicos) */
 @media (max-width: 440px) {
     .hero .overlay {
         max-width: 100%;
         padding: 0.8rem;
         border-radius: 4px;
     }
+
     .hero h1 {
         font-size: 1.3rem;
     }
+
     .hero p {
         font-size: 0.85rem;
     }
-}
-.hero .overlay {
-    box-sizing: border-box;
-    overflow-wrap: anywhere;
-}
-@media (max-width: 992px) {
-  .card-container.familia {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .card-container.familia {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-  }
 }
