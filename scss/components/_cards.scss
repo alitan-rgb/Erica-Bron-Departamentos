@@ -56,7 +56,45 @@
 }
 
 .card {
-  text-decoration: none;
-  color: inherit;
-  display: block; // para que se comporte como div
+    text-decoration: none;
+    color: inherit;
+    display: block; // para que se comporte como div
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: #ebeaea;
+    text-align: center;
+}
+
+.benefit {
+    padding: 1rem;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+}
+
+.benefit img {
+    width: 60px;
+    margin-bottom: 1rem;
+}
+
+.benefit h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.benefit p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
 }
