@@ -12,7 +12,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.navbar .brand {
+.brand {
     font-family: "Playfair Display", serif;
     font-size: 1.8rem;
     font-weight: bold;
@@ -22,7 +22,7 @@
     transition: color 0.4s ease;
 }
 
-.navbar .brand::after {
+.brand::after {
     content: "";
     position: absolute;
     left: 0;
@@ -33,11 +33,11 @@
     transition: width 0.4s ease;
 }
 
-.navbar .brand:hover {
+.brand:hover {
     color: #fff;
 }
 
-.navbar .brand:hover::after {
+.brand:hover::after {
     width: 100%;
 }
 
@@ -46,9 +46,6 @@
     position: absolute;
     opacity: 0;
     pointer-events: none;
-    width: 0;
-    height: 0;
-    z-index: -1;
 }
 
 /* Botón hamburguesa */
@@ -102,21 +99,23 @@
         transition: opacity 0.4s ease, transform 0.4s ease;
     }
 
-    .menu-toggle {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-        width: 0;
-        height: 0;
-        z-index: -1;
+    /* Mostrar menú cuando el checkbox está activado */
+    .menu-toggle:checked ~ .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
     .nav-links a {
         font-size: 1.5rem;
     }
 
-    /* Ocultar menú al hacer clic en un enlace */
-    .nav-links a {
+    /* Asegurar que los labels no afecten el estilo */
+    .nav-links label {
+        cursor: pointer;
+    }
+
+    .nav-links label a {
         pointer-events: auto;
     }
 }

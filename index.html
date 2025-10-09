@@ -7,7 +7,39 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-<!-- Navbar -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        menuToggle.checked = false; // Cierra el menú
+      });
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const benefits = document.querySelectorAll(".benefit");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // solo una vez
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    benefits.forEach(benefit => {
+      observer.observe(benefit);
+    });
+  });
+</script>
+
 <nav class="navbar">
   <div class="logo">
     <span class="brand">Erica Bron</span>
@@ -19,12 +51,12 @@
   <!-- Botón hamburguesa -->
   <label for="menu-toggle" class="hamburger">☰</label>
 
-  <!-- Links -->
+  <!-- Links envueltos en label para cerrar menú al hacer clic -->
   <ul class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#familia">4 Personas</a></li>
-    <li><a href="#economicos">Económicos</a></li>
-    <li><a href="#premium">Premium</a></li>
+    <li><label for="menu-toggle"><a href="#inicio">Inicio</a></label></li>
+    <li><label for="menu-toggle"><a href="#familia">4 Personas</a></label></li>
+    <li><label for="menu-toggle"><a href="#economicos">Económicos</a></label></li>
+    <li><label for="menu-toggle"><a href="#premium">Premium</a></label></li>
   </ul>
 </nav>
 
@@ -136,18 +168,6 @@
                     <p>Departamentos en la costa con estilo y confort.</p>
                 </div>
 
-                <!-- Columna 2 -->
-                <div class="footer-col">
-                    <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#familia">4-5 Personas</a></li>
-                        <li><a href="#economicos">Económicos</a></li>
-                        <li><a href="#premium">Premium</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-
                 <!-- Columna 3 -->
                 <div class="footer-col">
                     <h4>Contacto</h4>
@@ -171,21 +191,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Columna 4 (Mapa) -->
-                <div class="footer-col">
-                    <h4>Ubicación</h4>
-                    <div
-                        class="map-embed"
-                        aria-label="Mapa de Mar de Ajó, Buenos Aires, Argentina">
-                        <iframe
-                            src="https://www.google.com/maps?q=Mar+de+Aj%C3%B3,+Buenos+Aires,+Argentina&output=embed"
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2025 Erica Bron. Todos los derechos reservados.</p>

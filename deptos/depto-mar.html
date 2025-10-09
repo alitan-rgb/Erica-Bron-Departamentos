@@ -7,6 +7,33 @@
         <link rel="stylesheet" href="../css/style.css" />
     </head>
     <body>
+                <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuToggle = document.getElementById("menu-toggle");
+                const navLinks = document.querySelectorAll(".nav-links a");
+
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        menuToggle.checked = false; // Cierra el menú
+                    });
+                });
+            });
+        </script>
+        <nav class="navbar">
+            <div class="logo">
+                <span class="brand">Erica Bron</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">☰</label>
+            <ul class="nav-links">
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html">HOME 🏠︎</a></label
+                    >
+                </li>
+            </ul>
+        </nav>
+        
         <header class="page-header">
             <h1>Departamento a una cuadra del mar 🌊</h1>
             <p>Amplio Patio, Lugar para autos y parrilla.</p>

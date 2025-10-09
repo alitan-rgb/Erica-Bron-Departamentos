@@ -1,27 +1,36 @@
 .hero {
-    background: url(../images/playamuelle.jpg) no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: 60px;
+  background: url(../images/playamuelle.jpg) no-repeat center center / cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 60px;
 
-    .overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        text-align: center;
-        padding: 2rem;
-        border-radius: 8px;
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-        }
+    h1 {
+      font-size: 6vw; // Escala con el ancho de pantalla
+      font-family: "Playfair Display", serif;
+      background: linear-gradient(90deg, #f0c040, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      white-space: nowrap; // Evita que se divida en dos líneas
+      margin-bottom: 1rem;
     }
-}
 
+    p {
+      font-size: 3vw; // Más chico que el título, también responsivo
+      font-family: "Inter", sans-serif;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+    }
+  }
+}

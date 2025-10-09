@@ -27,7 +27,7 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.navbar .brand {
+.brand {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
   font-weight: bold;
@@ -37,7 +37,7 @@ body {
   transition: color 0.4s ease;
 }
 
-.navbar .brand::after {
+.brand::after {
   content: "";
   position: absolute;
   left: 0;
@@ -48,17 +48,19 @@ body {
   transition: width 0.4s ease;
 }
 
-.navbar .brand:hover {
+.brand:hover {
   color: #fff;
 }
 
-.navbar .brand:hover::after {
+.brand:hover::after {
   width: 100%;
 }
 
 /* Ocultar checkbox */
 .menu-toggle {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Botón hamburguesa */
@@ -119,8 +121,11 @@ body {
   .nav-links a {
     font-size: 1.5rem;
   }
-  /* Ocultar menú al hacer clic en un enlace */
-  .nav-links a {
+  /* Asegurar que los labels no afecten el estilo */
+  .nav-links label {
+    cursor: pointer;
+  }
+  .nav-links label a {
     pointer-events: auto;
   }
 }
@@ -141,11 +146,21 @@ body {
   border-radius: 8px;
 }
 .hero .overlay h1 {
-  font-size: 3rem;
+  font-size: 6vw;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #f0c040, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  white-space: nowrap;
   margin-bottom: 1rem;
 }
 .hero .overlay p {
-  font-size: 1.2rem;
+  font-size: 3vw;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  text-align: center;
+  margin: 0;
 }
 
 /* Secciones */
@@ -415,6 +430,17 @@ footer .footer-bottom p {
   line-height: 1.4;
 }
 
+.benefit {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.benefit.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero .overlay {
   box-sizing: border-box;
   overflow-wrap: anywhere;
@@ -472,12 +498,6 @@ footer .footer-bottom p {
     padding: 0.8rem;
     border-radius: 4px;
   }
-  .hero h1 {
-    font-size: 1.3rem;
-  }
-  .hero p {
-    font-size: 0.85rem;
-  }
 }
 /* ===== Estilo general ===== */
 body {
@@ -493,6 +513,7 @@ body {
   text-align: center;
   padding: 2rem 1rem;
   background: #f7f7f7; /* gris suave */
+  margin-top: 80px;
 }
 
 .page-header h1 {
