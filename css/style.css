@@ -26,6 +26,7 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
+
 .navbar .brand {
   font-family: "Playfair Display", serif;
   font-size: 1.8rem;
@@ -35,6 +36,7 @@ body {
   cursor: pointer;
   transition: color 0.4s ease;
 }
+
 .navbar .brand::after {
   content: "";
   position: absolute;
@@ -45,27 +47,18 @@ body {
   background-color: #f0c040;
   transition: width 0.4s ease;
 }
+
 .navbar .brand:hover {
   color: #fff;
 }
+
 .navbar .brand:hover::after {
   width: 100%;
 }
 
-/* Links desktop */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-.nav-links a:hover {
-  color: #f0c040;
+/* Ocultar checkbox */
+.menu-toggle {
+  display: none;
 }
 
 /* Botón hamburguesa */
@@ -76,10 +69,29 @@ body {
   cursor: pointer;
 }
 
+/* Links desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f0c040;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    z-index: 1001;
   }
   .nav-links {
     position: fixed;
@@ -98,13 +110,18 @@ body {
     pointer-events: none;
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
-  .nav-links.active {
+  /* Mostrar menú cuando el checkbox está activado */
+  .menu-toggle:checked ~ .nav-links {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
   }
   .nav-links a {
     font-size: 1.5rem;
+  }
+  /* Ocultar menú al hacer clic en un enlace */
+  .nav-links a {
+    pointer-events: auto;
   }
 }
 .hero {

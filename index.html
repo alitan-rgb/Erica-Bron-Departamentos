@@ -7,46 +7,32 @@
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="logo">
-                <span class="brand">Erica Bron</span>
-            </div>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <span class="brand">Erica Bron</span>
+  </div>
 
-            <!-- Botón hamburguesa -->
-            <div class="hamburger" id="hamburger">☰</div>
+  <!-- Checkbox oculto para controlar el menú -->
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
 
-            <!-- Links -->
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#familia">4 Personas</a></li>
-                <li><a href="#economicos">Económicos</a></li>
-                <li><a href="#premium">Premium</a></li>
-            </ul>
-        </nav>
+  <!-- Botón hamburguesa -->
+  <label for="menu-toggle" class="hamburger">☰</label>
 
-        <script>
-            const hamburger = document.getElementById("hamburger");
-            const navLinks = document.getElementById("nav-links");
-            const links = navLinks.querySelectorAll("a");
+  <!-- Links -->
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#familia">4 Personas</a></li>
+    <li><a href="#economicos">Económicos</a></li>
+    <li><a href="#premium">Premium</a></li>
+  </ul>
+</nav>
 
-            // abrir/cerrar menú
-            hamburger.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-
-            // cerrar menú al hacer clic en un enlace
-            links.forEach((link) => {
-                link.addEventListener("click", () => {
-                    navLinks.classList.remove("active");
-                });
-            });
-        </script>
 
         <!-- Hero -->
         <header id="inicio" class="hero">
             <div class="overlay">
-                <h1>Tu sítio en La Costa</h1>
+                <h1>Tu sitio en La Costa</h1>
                 <p>Encontrá tu lugar de descanso</p>
             </div>
         </header>
@@ -66,7 +52,7 @@
   <div class="benefit">
     <img src="images/icono-cartas.jpg" alt="Variedad de anunciantes" />
     <h3>Variedad de Sítios</h3>
-    <p>Casas, Departamentos y Duplex con variedad para todas las necesidades ubiados en La Costa.</p>
+    <p>Casas, Departamentos y Duplex con variedad para todas las necesidades ubicados en La Costa.</p>
   </div>
 
   <div class="benefit">
@@ -176,7 +162,7 @@
                                 alt="WhatsApp" />
                         </a>
                         <a
-                            href="https://instagram.com/ericabron"
+                            href="https://instagram.com/eri.bron"
                             target="_blank"
                             class="social-icon instagram">
                             <img
