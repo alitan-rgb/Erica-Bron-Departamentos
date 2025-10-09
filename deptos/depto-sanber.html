@@ -14,21 +14,41 @@
 
                 navLinks.forEach((link) => {
                     link.addEventListener("click", () => {
-                        menuToggle.checked = false; // Cierra el menú
+                        menuToggle.checked = false; // Cierra el menú al hacer clic
                     });
                 });
             });
         </script>
+
         <nav class="navbar">
             <div class="logo">
                 <span class="brand">Erica Bron</span>
             </div>
+
             <input type="checkbox" id="menu-toggle" class="menu-toggle" />
             <label for="menu-toggle" class="hamburger">☰</label>
+
             <ul class="nav-links">
                 <li>
                     <label for="menu-toggle"
-                        ><a href="../index.html">HOME 🏠︎</a></label
+                        ><a href="../index.html#inicio">Inicio</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#familia">4 Personas</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#economicos"
+                            >Económicos</a
+                        ></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#premium">Premium</a></label
                     >
                 </li>
             </ul>
@@ -94,9 +114,6 @@
         </main>
 
         <footer class="depto-footer">
-            <p>
-                <a href="../index.html" class="back-link">← Volver al inicio</a>
-            </p>
             <p>© 2025 Erica Bron. Todos los derechos reservados.</p>
         </footer>
     </body>
