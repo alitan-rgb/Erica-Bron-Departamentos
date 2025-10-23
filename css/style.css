@@ -351,8 +351,9 @@ footer .footer-bottom p {
 
 .card-container.familia {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* ✅ se adapta automáticamente */
   gap: 2rem;
+  padding: 2rem 1rem;
   justify-items: center;
 }
 
@@ -505,23 +506,62 @@ body {
 }
 
 /* Galería en grid */
+/* Galería en grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* ✅ se adapta automáticamente */
   gap: 2rem;
   margin-bottom: 2rem;
+  padding: 1rem;
+  justify-content: center; /* ✅ centra el grid si hay pocas imágenes */
 }
 
 .gallery img {
   width: 100%;
+  aspect-ratio: 4/3; /* ✅ mantiene proporción uniforme */
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+
+.video-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f2f2f2;
+}
+
+.video-item {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+
+.video-item video {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  display: block;
+  object-fit: contain; /* ✅ el poster se adapta al tamaño del video */
+}
+
+.video-item video:hover {
+  transform: scale(1.03);
+}
+
+.video-item p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
 }
 
 /* Descripción */
@@ -586,6 +626,27 @@ body {
 .depto-footer p {
   margin: 0.3rem 0;
   font-size: 0.9rem;
+}
+
+.flyer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f7f7f7; /* fondo gris suave como el header */
+}
+
+.flyer img {
+  width: 100%;
+  max-width: 1000px; /* ✅ ajustá según tu diseño */
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.flyer img:hover {
+  transform: scale(1.02);
 }
 
 /*# sourceMappingURL=style.css.map */

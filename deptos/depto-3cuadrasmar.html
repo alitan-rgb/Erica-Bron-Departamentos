@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Depto Familiar Sanber - Erica Bron</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuToggle = document.getElementById("menu-toggle");
+                const navLinks = document.querySelectorAll(".nav-links a");
+
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        menuToggle.checked = false; // Cierra el menú al hacer clic
+                    });
+                });
+            });
+        </script>
+
+        <nav class="navbar">
+            <div class="logo">
+                <span class="brand">Erica Bron</span>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">☰</label>
+
+            <ul class="nav-links">
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#inicio">Inicio</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#familia">4 Personas</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#economicos"
+                            >6 Personas</a
+                        ></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#premium">8 Personas</a></label
+                    >
+                </li>
+            </ul>
+        </nav>
+
+
+        <header class="page-header">
+            <h1>Depto a 3 cuadras del mar para 8 personas</h1>
+            <p>Barrio tranquilo, cerca de plaza, playa y con varias comodidades.</p>
+        </header>
+
+            <section class="video-gallery">
+            <div class="video-item">
+            <video controls poster="../images/portada depto3.jpg">
+            <source src="../videos/video2222.mp4" type="video/mp4" />Tu navegador no soporta el video.</video>
+</div>
+</section>
+
+            <!-- Descripción -->
+            <section class="description">
+                <h2>Depto a 3 cuadras del mar para 8 personas</h2>
+                <p>
+Cuenta  con 3  habitaciones 2 de ellas con cama matrimonial y una tercera con 2  canas simples y una cama cucheta. Patio parrilla wifi direct tv pre-pago. A media cuadra de una plaza con juegos y parque para la diversión los niños. El barrio muy tranquilo y las playas son amplias
+                </p>
+            </section>
+        </main>
+
+        <footer class="depto-footer">
+            <p>© 2025 Erica Bron. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>

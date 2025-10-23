@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Depto Familiar Sanber - Erica Bron</title>
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+    <body>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuToggle = document.getElementById("menu-toggle");
+                const navLinks = document.querySelectorAll(".nav-links a");
+
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        menuToggle.checked = false; // Cierra el menú al hacer clic
+                    });
+                });
+            });
+        </script>
+
+        <nav class="navbar">
+            <div class="logo">
+                <span class="brand">Erica Bron</span>
+            </div>
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">☰</label>
+
+            <ul class="nav-links">
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#inicio">Inicio</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#familia">4 Personas</a></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#economicos"
+                            >6 Personas</a
+                        ></label
+                    >
+                </li>
+                <li>
+                    <label for="menu-toggle"
+                        ><a href="../index.html#premium">8 Personas</a></label
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <header class="page-header">
+            <h1>Depto "Barrio El Silvio"
+            </h1>
+            <p>Depto ideal para descansar.</p>
+        </header>
+
+            <section class="video-gallery">
+            <div class="video-item">
+            <video controls poster="../images/portada depto1.jpg">
+            <source src="../videos/Vídeo sin título ‐ Hecho con Clipchamp (6).mp4" type="video/mp4" />Tu navegador no soporta el video.</video>
+</div>
+</section>
+
+            <!-- Descripción -->
+            <section class="description">
+                <h2>Depto "Barrio El Silvio"</h2>
+                <p>
+Depto ubicado a 3 cuadras del mar con balcón y vista al mar.  Cuenta con tv, direct tv pre-pago. 2 habitaciones y sofá cama en el comedor para una opción más
+                </p>
+            </section>
+        </main>
+
+        <footer class="depto-footer">
+            <p>© 2025 Erica Bron. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>
